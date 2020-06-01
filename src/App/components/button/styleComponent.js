@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Submit = styled.button `
-    background-color: blue;
+    background-color: #3737fd;
     border: none;
     border-radius: 50%;
     text-align: center;
@@ -9,7 +9,7 @@ export const Submit = styled.button `
     outline: none;
     cursor: pointer
     box-sizing: border-box;
-    margin-right: 15px;
+    margin: auto 15px;
 `;
 
 Submit.button = styled.div `
@@ -20,7 +20,6 @@ Submit.button = styled.div `
     transition:  transform 2s;
 
         :hover {
-            color: red;
             transform: rotateZ(45deg); 
         }
 `;

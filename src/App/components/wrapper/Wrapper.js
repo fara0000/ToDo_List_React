@@ -3,6 +3,7 @@ import { Container } from './styleComponent';
 import { InputWrapper } from './styleComponent';
 import { TaskWrapper } from './styleComponent';
 import ToDoButton from '../button/Button';
+import ToDoInput from '../input/Input';
 
 const ToDoContainer = props => {
     return (
@@ -12,6 +13,7 @@ const ToDoContainer = props => {
             </Container.TitleDiv>
             <Container.MainWrapper>
                 <InputWrapper>
+                    <ToDoInput />
                     <ToDoButton />
                 </InputWrapper>
                 <TaskWrapper>

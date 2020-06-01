@@ -5,7 +5,7 @@ const ToDoButton = props => {
     return (
         <Submit>  
             <Submit.button>
-                +
+            +
             </Submit.button>
         </Submit>
     )
