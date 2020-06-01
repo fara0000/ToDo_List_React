@@ -44,7 +44,7 @@ package-lock.json
 .idea/
 # TypeScript v1 declaration files
 typings/
-
+build/
 # TypeScript cache
 *.tsbuildinfo
 
