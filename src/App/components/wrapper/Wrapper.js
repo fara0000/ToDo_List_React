@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { PureComponent } from 'react';
 import { Container } from './styleComponent';
 import { InputWrapper } from './styleComponent';
 import { TaskWrapper } from './styleComponent';
@@ -45,4 +45,4 @@ class ToDoContainer extends React.PureComponent {
     }
 }
 
-export default memo(ToDoContainer);
+export default ToDoContainer;
