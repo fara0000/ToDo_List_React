@@ -1,9 +1,13 @@
 import React from 'react';
-import Input from '../components/input/Input'
+import { GlobalStyle } from './styleComponent';
+import ToDoContainer from './components/wrapper/Wrapper';
 
 function App() {
     return (
-        <div>TO DO</div>
+        <>
+            <ToDoContainer />
+            <GlobalStyle />
+        </>
     )
 }
 
