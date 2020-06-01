@@ -1,8 +1,13 @@
 import React from 'react';
+import { GlobalStyle } from './styleComponent';
+import ToDoContainer from './components/wrapper/Wrapper';
 
 function App() {
     return (
-        <div>TO DO</div>
+        <>
+            <ToDoContainer />
+            <GlobalStyle />
+        </>
     )
 }
 
