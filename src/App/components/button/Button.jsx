@@ -1,8 +1,7 @@
 import React, { memo } from 'react'
-import { Submit } from './StyleComponent';
+import { Submit } from './styleComponent';
 
-
-const Button = props => {
+const ToDoButton = props => {
     return (
         <Submit>  
             <Submit.button>
@@ -12,4 +11,4 @@ const Button = props => {
     )
 }
 
-export default memo(Button);
+export default memo(ToDoButton);

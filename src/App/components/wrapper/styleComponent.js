@@ -26,6 +26,9 @@ export const InputWrapper = styled.div`
     height: 100px;
     width: 400px;
     background-color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 `;
 
 export const TaskWrapper = styled.div`

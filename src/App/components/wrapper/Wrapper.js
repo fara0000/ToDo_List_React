@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { Container } from './styleComponent';
 import { InputWrapper } from './styleComponent';
-import { TaskWrapper } from './styleComponent'
+import { TaskWrapper } from './styleComponent';
+import ToDoButton from '../button/Button';
 
 const ToDoContainer = props => {
     return (
@@ -11,6 +12,7 @@ const ToDoContainer = props => {
             </Container.TitleDiv>
             <Container.MainWrapper>
                 <InputWrapper>
+                    <ToDoButton />
                 </InputWrapper>
                 <TaskWrapper>
                 </TaskWrapper>
