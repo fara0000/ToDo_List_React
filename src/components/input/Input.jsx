@@ -1,10 +1,9 @@
-import React, {memo} from 'react'
-import textInput from './styleComponent';
+import React,{ memo } from 'react'
+import { TextInput } from '../input/styleComponent';
 
-function Input (props) {
-    return (
-        <textInput {...props}>
-        </textInput>
+const Input = (props) => {
+    return  (
+        <TextInput {...props}/>
     )
 }
 
