@@ -8,7 +8,19 @@ import ToDoItem from '../TodoListItem/TodoListItem';
 
 class ToDoContainer extends React.PureComponent {
     constructor (props) {
-        super (props)
+        super (props);
+
+        this.state = {
+            task : ''
+        }
+
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput (event) {
+        const valueInput = event.target.value;
+        this.setState({task: valueInput});
+        console.log(this.state)
     }
     
     render () { 
@@ -19,7 +31,12 @@ class ToDoContainer extends React.PureComponent {
                 </Container.TitleDiv>
                 <Container.MainWrapper>
                     <InputWrapper>
-                        <ToDoInput />
+                        <ToDoInput 
+                        placeholder = {'Enter a task, please...'}
+                        className = {'ToDo_Input'}
+                        type = {'text'}
+                        onChange = {this.handleInput}
+                        />
                         <ToDoButton />
                     </InputWrapper>
                     <TaskWrapper>
