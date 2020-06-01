@@ -19,10 +19,13 @@ Wrapper.button = styled.button`
     background: none;
     font-size: 35px;
     transition: 0.5s;
+    outline: none;
+    cursor: pointer;
 
   &:hover {
     transform: scale(1.2);
-    color: red;
+    color: red;]
+    outline: none;
   }
 `;
 
