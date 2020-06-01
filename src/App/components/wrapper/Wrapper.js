@@ -4,6 +4,7 @@ import { InputWrapper } from './styleComponent';
 import { TaskWrapper } from './styleComponent';
 import ToDoButton from '../button/Button';
 import ToDoInput from '../input/Input';
+import ToDoItem from '../TodoListItem/TodoListItem';
 
 const ToDoContainer = props => {
     return (
@@ -17,6 +18,7 @@ const ToDoContainer = props => {
                     <ToDoButton />
                 </InputWrapper>
                 <TaskWrapper>
+                    <ToDoItem />
                 </TaskWrapper>
             </Container.MainWrapper>
         </Container>

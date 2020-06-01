@@ -10,6 +10,7 @@ export const Submit = styled.button `
     cursor: pointer
     box-sizing: border-box;
     margin: auto 15px;
+    margin-left: 5px !important;
 `;
 
 Submit.button = styled.div `

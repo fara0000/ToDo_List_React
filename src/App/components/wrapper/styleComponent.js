@@ -27,7 +27,7 @@ export const InputWrapper = styled.div`
     width: 400px;
     background-color: white;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 `;
 
@@ -35,4 +35,7 @@ export const TaskWrapper = styled.div`
     height: 400px;
     width: 400px;
     background-color: #e6e6e6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 `;

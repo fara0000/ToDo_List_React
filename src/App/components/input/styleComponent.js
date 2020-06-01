@@ -12,7 +12,7 @@ export const TextInput = styled.input`
     border: none;
     background-color: #e6e6e6;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 5px 10px 25px;
     outline: none;
     :focus {
         border: 2px solid #6060db;
