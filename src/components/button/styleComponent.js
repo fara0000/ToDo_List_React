@@ -13,13 +13,13 @@ box-sizing: border-box;
 
 Submit.button = styled.div `
     width: 50px;
-    height: 50px;
     color: white;
     font-size: 50px;
     padding-bottom: 7px;
     transition:  transform 2s;
+
         :hover {
             color: red;
-            transform: rotateX(360deg); 
+            transform: rotateZ(45deg); 
         }
 `;
