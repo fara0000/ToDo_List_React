@@ -11,7 +11,7 @@ class ToDoItem extends React.Component{
         return ( 
             <Wrapper>
                 <Wrapper.text>
-                    {props.content} Tasks
+                    Tasks
                 </Wrapper.text>
                 <Wrapper.button>
                     ×
