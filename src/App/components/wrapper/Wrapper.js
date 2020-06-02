@@ -19,8 +19,8 @@ class ToDoContainer extends React.PureComponent {
     }
 
     handleInput = event => {
-        const valueInput = event.target.value;
-        this.setState({task: valueInput});
+        const { value } = event.target;
+        this.setState({task: value});
         console.log(this.state)
     }
 
@@ -43,10 +43,10 @@ class ToDoContainer extends React.PureComponent {
                         <Container.MainWrapper>
                             <InputWrapper>
                                 <ToDoInput 
-                                placeholder = {'Enter a task, please...'}
-                                className = {'ToDo_Input'}
-                                type = {'text'}
-                                onChange = {this.handleInput}
+                                    placeholder = {'Enter a task, please...'}
+                                    className = {'ToDo_Input'}
+                                    type = {'text'}
+                                    onChange = {e => this.handleInput(e)}
                                 />
                                 <ToDoButton onClick={ () => changeToDoItem(!isShowToDoItem)}/>
                             </InputWrapper>
