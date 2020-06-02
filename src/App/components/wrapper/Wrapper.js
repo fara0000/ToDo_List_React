@@ -11,22 +11,17 @@ class ToDoContainer extends React.PureComponent {
         super (props);
 
         this.state = {
+            isShowToDoItem: false,
             task : ''
         }
 
         this.handleInput = this.handleInput.bind(this);
     }
 
-    handleInput (event) {
+    handleInput = event => {
         const valueInput = event.target.value;
         this.setState({task: valueInput});
         console.log(this.state)
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isShowToDoItem: false,
-        }
     }
 
     changeToDoItem = isShow => {
@@ -37,6 +32,7 @@ class ToDoContainer extends React.PureComponent {
         const { changeToDoItem } = this;
         const { isShowToDoItem } = this.state;
         const { task } = this.state;
+
         return (
             <>
                 { isShowToDoItem ? (<ToDoItem/>) :
@@ -59,6 +55,7 @@ class ToDoContainer extends React.PureComponent {
                             </TaskWrapper>
                         </Container.MainWrapper>
                     </Container>
+                }
             </>
         )
     }
