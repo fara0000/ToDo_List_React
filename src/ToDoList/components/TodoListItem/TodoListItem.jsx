@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper } from './styleComponent';
 
-class ToDoItem extends React.Component{
+class ToDoItem extends React.Component {
     constructor(props){
         super(props);
 
@@ -11,7 +11,7 @@ class ToDoItem extends React.Component{
         return ( 
             <Wrapper>
                 <Wrapper.text>
-                    {props.content} Tasks
+                    Tasks
                 </Wrapper.text>
                 <Wrapper.button>
                     ×

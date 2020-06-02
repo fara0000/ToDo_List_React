@@ -2,31 +2,24 @@ import React, { PureComponent } from 'react';
 import { Container } from './styleComponent';
 import { InputWrapper } from './styleComponent';
 import { TaskWrapper } from './styleComponent';
-import ToDoButton from '../button/Button';
-import ToDoInput from '../input/Input';
-import ToDoItem from '../TodoListItem/TodoListItem';
+import ToDoButton from '../components/button/Button';
+import ToDoInput from '../components/input/Input';
+import ToDoItem from './components/TodoListItem/TodoListItem';
 
 class ToDoContainer extends React.PureComponent {
     constructor (props) {
         super (props);
 
         this.state = {
-            task : ''
-        }
-
-        this.handleInput = this.handleInput.bind(this);
-    }
-
-    handleInput (event) {
-        const valueInput = event.target.value;
-        this.setState({task: valueInput});
-        console.log(this.state)
-    constructor(props) {
-        super(props);
-
-        this.state = {
+            task : '',
             isShowToDoItem: false,
         }
+    }
+
+    handleInput = event => {
+        const { value } = event.target;
+
+        this.setState({task: value});
     }
 
     changeToDoItem = isShow => {
@@ -35,30 +28,32 @@ class ToDoContainer extends React.PureComponent {
 
     render() {
         const { changeToDoItem } = this;
-        const { isShowToDoItem } = this.state;
-        const { task } = this.state;
+        const {
+            isShowToDoItem,
+        } = this.state;
+
         return (
             <>
-                { isShowToDoItem ? (<ToDoItem/>) :
+                {isShowToDoItem ? <ToDoItem/> :
                     <Container>
                         <Container.TitleDiv>
                             <h1>To Do List</h1>
                         </Container.TitleDiv>
                         <Container.MainWrapper>
                             <InputWrapper>
-                                <ToDoInput 
-                                placeholder = {'Enter a task, please...'}
-                                className = {'ToDo_Input'}
-                                type = {'text'}
-                                onChange = {this.handleInput}
+                                <ToDoInput
+                                    type={'text'}
+                                    onChange={e => this.handleInput(e)}
+                                    placeholder={'Enter a task, please...'}
                                 />
-                                <ToDoButton onClick={ () => changeToDoItem(!isShowToDoItem)}/>
+                                <ToDoButton onClick={() => changeToDoItem(!isShowToDoItem)}/>
                             </InputWrapper>
                             <TaskWrapper>
-                                <ToDoItem />
+                                <ToDoItem/>
                             </TaskWrapper>
                         </Container.MainWrapper>
                     </Container>
+                }
             </>
         )
     }
