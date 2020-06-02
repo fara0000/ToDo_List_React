@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const inputWidth = 250;
+const inputWidth = 260;
 const inputHeight = 35;
 
 export const TextInput = styled.input`
@@ -10,6 +10,7 @@ export const TextInput = styled.input`
     font-family: "Roboto", sans-serif;
     font-size: 20px;
     border: none;
+    border-radius: 15px;
     background-color: #e6e6e6;
     padding: 10px;
     margin: 10px 5px 10px 25px;

@@ -21,29 +21,45 @@ class ToDoContainer extends React.PureComponent {
         const valueInput = event.target.value;
         this.setState({task: valueInput});
         console.log(this.state)
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isShowToDoItem: false,
+        }
     }
-    
-    render () { 
+
+    changeToDoItem = isShow => {
+        this.setState({ isShowToDoItem: isShow })
+    }
+
+    render() {
+        const { changeToDoItem } = this;
+        const { isShowToDoItem } = this.state;
+        const { task } = this.state;
         return (
-            <Container>
-                <Container.TitleDiv>
-                    <h1>To Do List</h1>
-                </Container.TitleDiv>
-                <Container.MainWrapper>
-                    <InputWrapper>
-                        <ToDoInput 
-                        placeholder = {'Enter a task, please...'}
-                        className = {'ToDo_Input'}
-                        type = {'text'}
-                        onChange = {this.handleInput}
-                        />
-                        <ToDoButton />
-                    </InputWrapper>
-                    <TaskWrapper>
-                        <ToDoItem />
-                    </TaskWrapper>
-                </Container.MainWrapper>
-            </Container>
+            <>
+                { isShowToDoItem ? (<ToDoItem/>) :
+                    <Container>
+                        <Container.TitleDiv>
+                            <h1>To Do List</h1>
+                        </Container.TitleDiv>
+                        <Container.MainWrapper>
+                            <InputWrapper>
+                                <ToDoInput 
+                                placeholder = {'Enter a task, please...'}
+                                className = {'ToDo_Input'}
+                                type = {'text'}
+                                onChange = {this.handleInput}
+                                />
+                                <ToDoButton onClick={ () => changeToDoItem(!isShowToDoItem)}/>
+                            </InputWrapper>
+                            <TaskWrapper>
+                                <ToDoItem />
+                            </TaskWrapper>
+                        </Container.MainWrapper>
+                    </Container>
+            </>
         )
     }
 }
