@@ -6,7 +6,7 @@ import ToDoButton from '../components/button/Button';
 import ToDoInput from '../components/input/Input';
 import ToDoItem from './components/TodoListItem/TodoListItem';
 
-class ToDoList extends React.PureComponent {
+class ToDoList extends PureComponent {
     constructor (props) {
         super (props);
 
