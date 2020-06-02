@@ -6,7 +6,7 @@ import ToDoButton from '../components/button/Button';
 import ToDoInput from '../components/input/Input';
 import ToDoItem from './components/TodoListItem/TodoListItem';
 
-class ToDoContainer extends React.PureComponent {
+class ToDoList extends React.PureComponent {
     constructor (props) {
         super (props);
 
@@ -22,8 +22,12 @@ class ToDoContainer extends React.PureComponent {
         this.setState({task: value});
     }
 
-    changeToDoItem = isShow => {
-        this.setState({ isShowToDoItem: isShow })
+    changeToDoItem = () => {
+        const { createTask } = this.props;
+        const { task } = this.state;
+
+        createTask(task);
+        this.setState({ task: '' })
     }
 
     render() {
@@ -59,4 +63,4 @@ class ToDoContainer extends React.PureComponent {
     }
 }
 
-export default ToDoContainer;
+export default ToDoList;

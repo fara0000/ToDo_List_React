@@ -1,11 +1,11 @@
 import React from 'react';
 import { GlobalStyle } from './styleComponent';
-import ToDoContainer from '../ToDoList/ToDoList';
+import ToDoList from '../ToDoList/index';
 
 function App() {
     return (
         <>
-            <ToDoContainer />
+            <ToDoList />
             <GlobalStyle />
         </>
     )
