@@ -23,18 +23,30 @@ class ToDoList extends PureComponent {
     }
 
     changeToDoItem = () => {
-        const { createTask } = this.props;
-        const { task } = this.state;
+        const {
+            addTask,
+        } = this.props;
+        const {
+            task,
+        } = this.state;
 
-        createTask(task);
+        task.trim() && addTask(task);
+
         this.setState({ task: '' })
     }
 
     render() {
         const { changeToDoItem } = this;
         const {
+            task,
             isShowToDoItem,
         } = this.state;
+
+        const {
+            delTask,
+            getTasks,
+            doneTask,
+        } = this.props;
 
         return (
             <>
@@ -47,13 +59,21 @@ class ToDoList extends PureComponent {
                             <InputWrapper>
                                 <ToDoInput
                                     type={'text'}
+                                    value={task}
                                     onChange={e => this.handleInput(e)}
                                     placeholder={'Enter a task, please...'}
                                 />
-                                <ToDoButton onClick={() => changeToDoItem(!isShowToDoItem)}/>
+                                <ToDoButton onClick={() => changeToDoItem()}/>
                             </InputWrapper>
                             <TaskWrapper>
-                                <ToDoItem/>
+                                { getTasks.map((task, index) =>
+                                    <ToDoItem
+                                        del={delTask}
+                                        key={index}
+                                        text={task}
+                                        doneTask={doneTask}
+                                    />)
+                                }
                             </TaskWrapper>
                         </Container.MainWrapper>
                     </Container>

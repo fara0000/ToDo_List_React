@@ -3,7 +3,9 @@ import { Submit } from './styleComponent';
 
 const ToDoButton = props => {
     return (
-        <Submit>  
+        <Submit
+            onClick={() => props.onClick()}
+        >
             +
         </Submit>
     )

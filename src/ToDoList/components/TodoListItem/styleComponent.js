@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+const wrapperBgDone = '#b2b2b2';
+const wrapperBg = 'rgb(63, 149, 199)';
+
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -7,7 +10,7 @@ export const Wrapper = styled.div`
     width: 380px;
     height: 100px;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(63, 149, 199);
+    background-color: ${ props => props.done ? wrapperBgDone : wrapperBg };
     margin: 15px 0;
 `;
 
