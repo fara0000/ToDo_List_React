@@ -7,14 +7,14 @@ export default (state = initialState, action ) => {
         case constants.CREATE_TASK:
             return [
                 ...state,
-                { text: action.payload, done: false }
+                { text: action.payload, done: false, id: action.id }
             ]
         case constants.DELETE_TASK:
-            return state.filter(item => item.text !== action.payload)
+            return state.filter(todo => todo.id !== action.id)
         case constants.DONE_TASK:
             return state.map(todo =>
-                action.payload === todo.text
-                    ? { text: todo.text, done: !todo.done }
+                action.id === todo.id
+                    ? { text: todo.text, done: !todo.done, id: todo.id}
                     : todo
             )
         default:
