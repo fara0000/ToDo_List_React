@@ -4,8 +4,7 @@ import { TextInput } from './styleComponent';
 const ToDoInput = (props) => {
     return  (
         <TextInput
-            value={props.value}
-            onChange={e => props.onChange(e)}
+            {...props}
         />
     )
 }

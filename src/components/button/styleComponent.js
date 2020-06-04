@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Submit = styled.button `
-    background-color: #3737fd;
+    background-color: #fb4c49;
     border: none;
     border-radius: 50%;
     outline: none;
@@ -13,10 +13,10 @@ export const Submit = styled.button `
     color: white;
     cursor: pointer;
     font-size: 35px;
-    padding-bottom: 7px;
-    transition: transform 1s;
+    // padding-bottom: 7px;
+    transition: transform 0.2s;
     :hover {
-        transform: rotateZ(90deg) scale(1.1); 
+        transform: scale(1.1); 
     }
     :active {
         transform: scale(1); 
