@@ -1,0 +1,16 @@
+import ToDoList from './ToDoList';
+import { connect } from 'react-redux';
+import * as action from './action';
+import * as selectors from './selector';
+
+const mapDispatchToProps = dispatch => ({
+    addTask: payload => dispatch(action.addTask(payload)),
+    delTask: payload => dispatch(action.delTask(payload)),
+    doneTask: payload => dispatch(action.doneTask(payload)),
+});
+
+const mapStateToProps = state => ({
+    getTasks: selectors.getTasks(state)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
