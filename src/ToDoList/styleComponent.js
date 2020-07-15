@@ -9,10 +9,37 @@ export const Container = styled.div`
 `;
 
 Container.MainWrapper = styled.div`
-    height: 500px;    
-    width: 400px;
-    border: none;
-    background-color: white;
+    & {
+        position: relative;
+        height: 500px;    
+        width: 400px;
+        // border: 2px solid #fb4c49;
+        // border-bottom-style: none;
+        // box-shadow: 0 0 10px #fb4c49;
+        background-color: white;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        z-index: -1;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        z-index: -2;
+        filter: blur(70px);
+    }
+    &:before, &:after {
+        background: linear-gradient(235deg,#fb4c49,#171330,#00bcd4);
+    }
 `;
 
 Container.TitleDiv = styled.div`
@@ -34,8 +61,9 @@ export const InputWrapper = styled.div`
 export const TaskWrapper = styled.div`
     height: 400px;
     width: 400px;
-    background-color: #e6e6e6;
+    background-color: #171330;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: scroll;
 `;

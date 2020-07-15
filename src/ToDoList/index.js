@@ -4,7 +4,9 @@ import * as action from './action';
 import * as selectors from './selector';
 
 const mapDispatchToProps = dispatch => ({
-    addTask: payload => dispatch(action.addTask(payload))
+    addTask: payload => dispatch(action.addTask(payload)),
+    delTask: payload => dispatch(action.delTask(payload)),
+    doneTask: payload => dispatch(action.doneTask(payload)),
 });
 
 const mapStateToProps = state => ({

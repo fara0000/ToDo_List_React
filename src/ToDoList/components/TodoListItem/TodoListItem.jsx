@@ -1,24 +1,34 @@
 import React from 'react';
 import { Wrapper } from './styleComponent';
 
-class ToDoItem extends React.Component {
-    constructor(props){
-        super(props);
+const ToDoItem = props => {
+    const {
+        id,
+        text,
+        done,
+    } = props.text;
 
-    }
-    render() {
-
-        return ( 
-            <Wrapper>
-                <Wrapper.text>
-                    props
-                </Wrapper.text>
-                <Wrapper.button>
-                    ×
-                </Wrapper.button>
-            </Wrapper>
-        ); 
-    }
-}
+    const {
+        del,
+        doneTask,
+    } = props;
+    
+    return (
+        <Wrapper
+            data-at={'wrapper-to-do-list-items'}
+            done={done}
+            onClick={() => doneTask(id)}
+        >
+            <Wrapper.text>
+                {text}
+            </Wrapper.text>
+            <Wrapper.button
+                onClick={() => del(id)}
+            >
+                ×
+            </Wrapper.button>
+        </Wrapper>
+    )
+};
 
 export default ToDoItem;

@@ -3,7 +3,9 @@ import { TextInput } from './styleComponent';
 
 const ToDoInput = (props) => {
     return  (
-        <TextInput {...props}/>
+        <TextInput
+            {...props}
+        />
     )
 }
 

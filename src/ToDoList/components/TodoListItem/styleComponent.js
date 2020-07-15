@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+const wrapperBgDone = '#89ff00';
+const wrapperBg = '#fb4c49';
+const boxShadowDone = '0 0 5px #89ff00';
+const boxShadow = '0 0 5px #fb4c49';
+const whiteC = '#ffffff';
+const blackC = '#000000';
+
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -7,12 +14,14 @@ export const Wrapper = styled.div`
     width: 380px;
     height: 100px;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(63, 149, 199);
-    margin: 15px 0;
+    background-color: ${ props => props.done ? wrapperBgDone : wrapperBg };
+    box-shadow: ${ props => props.done ? boxShadowDone : boxShadow };
+    color: ${ props => props.done ? blackC : whiteC };
+    margin-top: 15px;
 `;
 
 Wrapper.button = styled.button`
-    color: white;
+    color: ${ props => props.done ? blackC : whiteC };
     height: 40px;
     border: none;
     margin: 0 5px;
@@ -24,14 +33,13 @@ Wrapper.button = styled.button`
 
   &:hover {
     transform: scale(1.2);
-    color: red;]
     outline: none;
+    color: red;
   }
 `;
 
 Wrapper.text = styled.div`
     height: auto;
-    color: white;
     margin: 10px;
     padding: 5px 10px;
 `;
